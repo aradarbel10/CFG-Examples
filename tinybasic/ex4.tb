@@ -1,0 +1,8 @@
+ 10 print "Collatz Conjecture"
+    input "Start Number?", n
+    if ((N/2)*2) = N then GOTO 30
+    n = 3 * N +1
+    GOTO 40
+ 30 n = n / 2
+ 40 PRINT "N: ", 
+    if n <> 1 goto 10

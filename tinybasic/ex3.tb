@@ -1,0 +1,8 @@
+ 10 INPUT "Number to guess? ", X
+ 20 INPUT "Guess a number: ", Z
+    IF Z = X GOTO 30
+    PRINT "WRONG!!"
+    GOTO 20
+ 30 PRINT "RIGHT!!!"
+    GOTO 10
+    
