@@ -1,5 +1,5 @@
 <date-type> = <day-of-week> <date> <time>
-<day-of-week> = <day-name> ',' whitespcae
+<day-of-week> = <day-name> ',' whitespace
               | epsilon
 <day-name> = 'Sun'
            | 'Mon'
