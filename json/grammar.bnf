@@ -1,0 +1,19 @@
+<object> = '{' '}'
+         | '{' <members> '}'
+<members> = <pair> ',' <members>
+          | epsilon
+<pair> = string ':' <value>
+<array> = '[' ']'
+        | '[' <elements> ']'
+<elements> = <value> ',' <elements>
+           | epsilon
+<value> = string
+        | number
+        | <object>
+        | <array>
+        | 'true'
+        | 'false'
+        | 'null'
+
+# credit for grammar http://jasonlhy.github.io/2016/03/20/Context-Free-Grammar-JSON/
+# credit for exampels https://json.org/example.html

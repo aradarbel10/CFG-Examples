@@ -1,0 +1,37 @@
+<date-type> = <day-of-week> <date> <time>
+<day-of-week> = <day-name> ',' whitespcae
+              | epsilon
+<day-name> = 'Sun'
+           | 'Mon'
+           | 'Tue'
+           | 'Wed'
+           | 'Thu'
+           | 'Fri'
+           | 'Sat'
+<date> = <day> whitespace <month> whitespace <year> whitespace
+<day> = digit digit
+<month> = 'Jan'
+        | 'Feb'
+        | 'Mar'
+        | 'Apr'
+        | 'May'
+        | 'Jun'
+        | 'Jul'
+        | 'Aug'
+        | 'Sep'
+        | 'Oct'
+        | 'Nov'
+        | 'Dec'
+<year> = digit digit digit digit
+<time> = <time-of-day> whitespace <zone>
+<time-of-day> = <hour> ':' <minute>
+              | <hour> ':' <minute> ':' <second>
+<hour> = digit digit
+<minute> = digit digit
+<second> = digit digit
+<zone> = <sign> digit digit digit digit
+       | epsilon
+<sign> = '+' | '-'
+
+
+# credit for grammar https://datatracker.ietf.org/doc/html/rfc5322#section-1.2

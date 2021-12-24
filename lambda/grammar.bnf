@@ -1,0 +1,8 @@
+<term> = identifier
+       | '(' <term> <term> ')'
+       | 'lambda' identifier '.' <term>
+
+# credit for examples https://en.wikipedia.org/wiki/Lambda_calculus#Formal_definition
+#       ex1: successor function
+#       ex2: church pair
+#       ex3: Y-combinator
