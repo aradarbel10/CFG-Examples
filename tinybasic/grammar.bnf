@@ -1,0 +1,55 @@
+# Tiny basic is case insensitive
+
+<program> = <line> <lines>
+
+<line> =  <linenumber> <optspace> <statement> <eol>
+<lines> = <line> <lines> | <optspace> 
+<linenumber> = <optspace> <intnum> | <optspace>
+
+<statement> = 'PRINT' whitespace <prlist>
+            | 'INPUT' whitespace <prompt> <varlist>
+            | 'LET' whitespace <var> <optspace> '=' <expr>
+            | 'GOTO' whitespace <expr>
+            | 'GOSUB' whitespace <expr>
+            | 'RETURN' 
+            | 'IF' whitespace <test> 'THEN' whitespace <statement>
+            | 'END'
+            | 'REM'
+            | 'FOR' whitespace <init> <to> <step>
+            | 'NEXT'
+
+<prompt> = string <optspace> "," <optspace> | <optspace>
+<test> = <expr> <optspace> <cmp> <expr> <optspace> 
+<init> = whitespace '=' <expr>
+<to> = <optspace> 'TO' <expr> 
+<step> = <optspace> 'STEP' <expr> | <optspace>
+
+<var> = 'A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|'M'
+      | 'N'|'O'|'P'|'Q'|'R'|'S'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z'
+
+<prlist> = <pritem> <pritems> <nonewline>
+<pritem> = string | <expr>
+<pritems> = <optspace> ';' <optspace> <pritem> <pritems> | <optspace>
+<nonewline> = <optsapce> ';' | <optspace>
+
+<varlist> = <var> <vars>
+<vars> = <optspace> ',' <optspace> <var> <vars> | <optspace>
+
+<expr> = <optspace> <term> <optspace> <add> <expr> | <optspace> <term>
+<term> = <fact> <optspaces> <mlt> <expr> | <fact>
+<fact> = <intnum> | <var> | '(' <expr> <optspace> ')' | '-' <fact> 
+
+<mlt> = '*' | '/'
+<add> = '+' | '-' 
+<cmp> = '<>' | '<=' | '<' | '>=' | '>' 
+
+<intnum> = <sign> digit <intdigits>
+<sign> = '+' | '-' | epsilon
+<intdigits> = digit <intdigts> | epsilon
+
+<eol> = <optspace> <crlf>
+<crlf> = '\r\n' | '\r' | '\n' | '\0'
+
+<optspace> = whitespace | epsilon
+
+# Derived from: https://archive.org/details/dr_dobbs_journal_vol_01 page 9
