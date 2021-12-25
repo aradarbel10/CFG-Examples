@@ -1,3 +1,5 @@
+REM Mix of lower/upper case is on purpose!
+
  10 print "Collatz Conjecture"
     input "Start Number?", n
     s=1
